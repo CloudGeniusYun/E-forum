@@ -123,7 +123,6 @@
             color: white;
             border: none;
             padding: 10px 24px;
-            border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
@@ -132,7 +131,6 @@
 
         .create-btn:hover {
             background: #0077cc;
-            transform: translateY(-1px);
         }
 
         .menu-btn {
@@ -161,7 +159,7 @@
             margin: 0 auto;
             padding: 24px 20px;
             display: grid;
-            grid-template-columns: 220px 1fr 300px;
+            grid-template-columns: 180px 1fr 300px;
             gap: 24px;
         }
 
@@ -170,7 +168,7 @@
             grid-column: 1 / -1;
             background: var(--white);
             padding: 16px;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             display: flex;
             gap: 12px;
@@ -180,7 +178,7 @@
         .search-type {
             padding: 12px 16px;
             border: 1px solid #e0e0e0;
-            border-radius: 6px;
+            border-radius: 4px;
             background: #fafafa;
             font-size: 14px;
             cursor: pointer;
@@ -193,7 +191,7 @@
             flex: 1;
             padding: 12px 16px;
             border: 1px solid #e0e0e0;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 14px;
             outline: none;
             transition: border-color 0.3s;
@@ -204,49 +202,45 @@
         }
 
         .search-btn {
-            padding: 12px 28px;
+            padding: 12px 32px;
             background: var(--primary-blue);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .search-btn:hover {
             background: #0077cc;
+            transform: translateY(-1px);
         }
 
         /* 左侧边栏 - 友情链接 */
         .sidebar-left {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             padding: 20px;
             height: fit-content;
         }
 
-        .sidebar-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
         .friend-links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .friend-links a {
             color: #555;
             text-decoration: none;
             font-size: 14px;
-            padding: 8px 12px;
+            padding: 10px 12px;
             border-radius: 4px;
             transition: all 0.3s;
         }
@@ -265,23 +259,24 @@
 
         .article-card {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             padding: 24px;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .article-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .article-title {
             font-size: 18px;
             font-weight: 600;
-            color: #333;
+            color: #1a1a1a;
             margin-bottom: 12px;
-            cursor: pointer;
+            line-height: 1.6;
             transition: color 0.3s;
         }
 
@@ -304,9 +299,9 @@
         }
 
         .article-summary {
-            color: #666;
+            color: #555;
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* 右侧边栏 */
@@ -318,7 +313,7 @@
 
         .widget {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             padding: 20px;
         }
@@ -339,7 +334,7 @@
             background: linear-gradient(135deg, var(--primary-blue), #00b4d8);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -365,6 +360,7 @@
             line-height: 1.8;
             font-style: italic;
             margin-bottom: 12px;
+            transition: opacity 0.3s;
         }
 
         .quote-author {
@@ -386,7 +382,7 @@
             align-items: center;
             padding: 16px 8px;
             background: #fafafa;
-            border-radius: 6px;
+            border-radius: 4px;
             text-decoration: none;
             color: #555;
             font-size: 13px;
@@ -461,7 +457,7 @@
             </nav>
 
             <div class="header-right">
-                <button class="create-btn">创</button>
+                <button class="create-btn">创作者中心</button>
                 <button class="menu-btn">
                     <span></span>
                     <span></span>
@@ -477,12 +473,11 @@
         <div class="search-section">
             <button class="search-type">Search ▼</button>
             <input type="text" class="search-input" placeholder="输入关键词搜索...">
-            <button class="search-btn">Q三</button>
+            <button class="search-btn">🔍 搜索</button>
         </div>
 
         <!-- 左侧边栏 -->
         <aside class="sidebar-left">
-            <h3 class="sidebar-title">友情站</h3>
             <div class="friend-links">
                 <a href="#">J</a>
                 <a href="#">Star</a>
