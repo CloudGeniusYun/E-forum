@@ -632,8 +632,16 @@
                     quoteImage.style.opacity = '0';
                 }
 
-                const response = await fetch('http://oiapi.net/api/AWord');
+                console.log('开始获取一言...');
+                const response = await fetch('http://oiapi.net/api/AWord?type=json');
+                console.log('响应状态:', response.status);
+
+                if (!response.ok) {
+                    throw new Error('HTTP error! status: ' + response.status);
+                }
+
                 const data = await response.json();
+                console.log('API返回数据:', data);
 
                 if (data.code === 200 && data.data) {
                     setTimeout(() => {
@@ -657,12 +665,12 @@
                         quoteText.style.opacity = '1';
                     }, 300);
                 } else {
-                    quoteText.textContent = '获取一言失败';
+                    quoteText.textContent = '获取一言失败: ' + (data.message || '未知错误');
                     quoteText.style.opacity = '1';
                 }
             } catch (error) {
                 console.error('获取一言失败:', error);
-                quoteText.textContent = '网络错误，请稍后重试';
+                quoteText.textContent = '网络错误，请检查网络连接';
                 quoteText.style.opacity = '1';
             }
         }
@@ -670,7 +678,7 @@
         // 页面加载完成后获取一言
         document.addEventListener('DOMContentLoaded', () => {
             fetchQuote();
-            setInterval(fetchQuote, 10000);
+            setTimeout(fetchQuote, 5000);
         });
 
         // 签到按钮
